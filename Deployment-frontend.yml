@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  labels:
+    app: front-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: front-app
+  template:
+    metadata:
+      labels:
+        app: front-app
+    spec:
+      containers:
+      - name: frontend
+        image: salmahesham1114/devops-test-project:frontend
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        env:
+        - name: VITE_API_URL
+          value: "http://192.168.233.132:30081"
+        ports:
+        - containerPort: 5173
