@@ -5,7 +5,7 @@ metadata:
   labels:
     app: front-app
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: front-app
@@ -17,12 +17,10 @@ spec:
       containers:
       - name: frontend
         image: salmahesham1114/devops-test-project:frontend
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         env:
         - name: VITE_API_URL
-          value: "http://192.168.233.132:30081"
+          value: "http://192.168.233.132:31715"
         ports:
         - containerPort: 5173
+
+
