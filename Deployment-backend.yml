@@ -5,7 +5,7 @@ metadata:
   labels:
     app: back-app
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: back-app
@@ -17,9 +17,5 @@ spec:
       containers:
       - name: backend
         image: salmahesham1114/devops-test-project:backend
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 5000
