@@ -3,11 +3,9 @@ kind: Service
 metadata:
   name: front-svc
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: front-app
   ports:
   - port: 5173
     targetPort: 5173
-    nodePort: 30080
-
